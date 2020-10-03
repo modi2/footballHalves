@@ -1,0 +1,45 @@
+/*
+footballHalves.java
+Author: Modi Longa
+Date: 10/15/2019
+Description: This project determines the earliest possible time a football game finishes.
+*/
+
+import java.util.Scanner;
+public class FootballHalfs {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner (System.in);
+		int currentHour, currentMinute, endHour, endMinute;
+		
+		//table for military time
+		System.out.println("Enter the hour the game starts in military time between 0 and 25:");
+		currentHour = keyboard.nextInt();
+		if ((currentHour < 1) || (currentHour > 24))
+			{System.out.println("Invalid input. Values should be as mentioned."); System.exit(0);}
+				
+		System.out.println("Enter the minute the game starts between 0 and 61.");
+		currentMinute = keyboard.nextInt();
+		if ((currentMinute < 0) || (currentMinute > 60))
+			{System.out.println("Invalid input. Values should be as mentioned."); System.exit(0);}
+		
+		System.out.println("It is currently " + currentHour+":"+currentMinute);
+		System.out.println();
+				
+		endHour = currentHour + 1;
+		endMinute = currentMinute + 45;
+		
+		if (endMinute == 60)
+			{endMinute = 00; endHour = endHour + 1;}
+				{
+				if (endMinute > 60)
+					{endMinute = endMinute - 60; endHour = endHour + 1;}
+			}
+		
+		if (endHour > 24)
+			{endHour = endHour - 24;}
+				
+		System.out.println("At the earliest, this game will end at " + endHour + ":" + endMinute+".");
+	}
+
+}
