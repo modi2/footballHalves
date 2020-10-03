@@ -6,7 +6,7 @@ Description: This project determines the earliest possible time a football game 
 */
 
 import java.util.Scanner;
-public class FootballHalfs {
+public class footballHalves {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner (System.in);
